@@ -1,16 +1,30 @@
 for (i=1; i<101; i++) {
-    const result3=i/3
-    const result5=i/5
-    if (Number.isInteger(result3)&&Number.isInteger(result5)) {
-        console.log('FizzBuzz');
+
+    const result3=i/3;
+    const result5=i/5;
+    const result7=i/7;
+    const result11=i/11;
+    const result13=i/13;
+    const result17=i/17;
+
+    var toPrint='';
+    
+    if (Number.isInteger(result3)) {
+        toPrint+='Fizz';
     }
-    else if (Number.isInteger(result3)) {
-        console.log('Fizz');
+    if (Number.isInteger(result5)) {
+        toPrint+='Buzz';
     }
-    else if (Number.isInteger(result5)) {
-        console.log('Buzz');
+    if (Number.isInteger(result7)) {
+        toPrint+='Bang';
     }
-    else {
+
+    if (toPrint=='') {
         console.log(i);
     }
+    else {
+        console.log(toPrint);
+    }
 }
+
+
