@@ -1,4 +1,4 @@
-for (i=1; i<101; i++) {
+for (i=1; i<201; i++) {
 
     const result3=i/3;
     const result5=i/5;
@@ -9,16 +9,28 @@ for (i=1; i<101; i++) {
 
     var toPrint='';
     
-    if (Number.isInteger(result3)) {
-        toPrint+='Fizz';
-    }
-    if (Number.isInteger(result5)) {
-        toPrint+='Buzz';
-    }
-    if (Number.isInteger(result7)) {
-        toPrint+='Bang';
-    }
 
+    if (Number.isInteger(result11)) {
+        toPrint+='Bong';
+        if (Number.isInteger(result13)) {
+            toPrint='Fezz'+toPrint;
+        }
+    }
+    else {
+            if (Number.isInteger(result3)) {
+                toPrint+='Fizz';
+            }
+            if (Number.isInteger(result13)) {
+                toPrint+='Fezz';
+            }
+            if (Number.isInteger(result5)) {
+                toPrint+='Buzz';
+            }
+            if (Number.isInteger(result7)) {
+                toPrint+='Bang';
+            }
+
+    }
     if (toPrint=='') {
         console.log(i);
     }
@@ -26,5 +38,3 @@ for (i=1; i<101; i++) {
         console.log(toPrint);
     }
 }
-
-
