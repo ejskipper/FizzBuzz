@@ -4,67 +4,70 @@ console.log('How many numbers would you like to print?');
 const response=readline.prompt();
 const responsePlusOne=+response+1;
 
-for (i=1; i<responsePlusOne; i++) {
+function isDivisible(numerator,denominator) {
+    const divided=numerator/denominator;
+    const result=Number.isInteger(divided);
+    return result;
+}
 
-    const result3=i/3;
-    const result5=i/5;
-    const result7=i/7;
-    const result11=i/11;
-    const result13=i/13;
-    const result17=i/17;
+for (let i=1; i<responsePlusOne; i++) {
 
-    var toPrint='';
+    let toPrint='';
+
+    const ans3=isDivisible(i,3);
+    const ans5=isDivisible(i,5);
+    const ans7=isDivisible(i,7);
+    const ans11=isDivisible(i,11);
+    const ans13=isDivisible(i,13);
+    const ans17=isDivisible(i,17);
     
-    if (Number.isInteger(result17)) {
-        if (Number.isInteger(result11)) {
+    
+    if (ans17) {
+        if (ans11) {
             toPrint+='Bong';
-            if (Number.isInteger(result13)) {
+            if (ans13) {
                 toPrint+='Fezz';
             }
-        }
-        else {
-            if (Number.isInteger(result7)) {
+        } else {
+            if (ans7) {
                 toPrint+='Bang';
             }
-            if (Number.isInteger(result5)) {
+            if (ans5) {
                 toPrint+='Buzz';
             }
-            if (Number.isInteger(result13)) {
+            if (ans13) {
                 toPrint+='Fezz';
             }
-            if (Number.isInteger(result3)) {
+            if (ans3) {
                 toPrint+='Fizz';
             }
         }
-    }
-    else {
-        if (Number.isInteger(result11)) {
+    } else {
+        if (ans11) {
             toPrint+='Bong';
-            if (Number.isInteger(result13)) {
+            if (ans13) {
                 toPrint='Fezz'+toPrint;
             }
-        }
-        else {
-                if (Number.isInteger(result3)) {
+        } else {
+                if (ans3) {
                     toPrint+='Fizz';
                 }
-                if (Number.isInteger(result13)) {
+                if (ans13) {
                     toPrint+='Fezz';
                 }
-                if (Number.isInteger(result5)) {
+                if (ans5) {
                     toPrint+='Buzz';
                 }
-                if (Number.isInteger(result7)) {
+                if (ans7) {
                     toPrint+='Bang';
                 }
 
         }
         
     }
-    if (toPrint=='') {
-        console.log(i);
-    }
-    else {
+    if (toPrint) {
         console.log(toPrint);
+    } else {
+        console.log(i);
     }
 }
