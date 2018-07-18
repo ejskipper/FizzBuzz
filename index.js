@@ -12,7 +12,7 @@ function isDivisible(numerator,denominator) {
 
 for (let i=1; i<responsePlusOne; i++) {
 
-    let toPrint='';
+    let toPrint=[];
 
     const ans3=isDivisible(i,3);
     const ans5=isDivisible(i,5);
@@ -20,52 +20,31 @@ for (let i=1; i<responsePlusOne; i++) {
     const ans11=isDivisible(i,11);
     const ans13=isDivisible(i,13);
     const ans17=isDivisible(i,17);
-    
-    
-    if (ans17) {
         if (ans11) {
-            toPrint+='Bong';
+            toPrint.push('Bong');
             if (ans13) {
-                toPrint+='Fezz';
-            }
-        } else {
-            if (ans7) {
-                toPrint+='Bang';
-            }
-            if (ans5) {
-                toPrint+='Buzz';
-            }
-            if (ans13) {
-                toPrint+='Fezz';
-            }
-            if (ans3) {
-                toPrint+='Fizz';
-            }
-        }
-    } else {
-        if (ans11) {
-            toPrint+='Bong';
-            if (ans13) {
-                toPrint='Fezz'+toPrint;
+                toPrint.unshift('Fezz');
             }
         } else {
                 if (ans3) {
-                    toPrint+='Fizz';
+                    toPrint.push('Fizz');
                 }
                 if (ans13) {
-                    toPrint+='Fezz';
+                    toPrint.push('Fezz');
                 }
                 if (ans5) {
-                    toPrint+='Buzz';
+                    toPrint.push('Buzz');
                 }
                 if (ans7) {
-                    toPrint+='Bang';
+                    toPrint.push('Bang');
                 }
 
         }
+        if (ans17) {
+            toPrint.reverse();
+        }
         
-    }
-    if (toPrint) {
+    if (toPrint[0]) {
         console.log(toPrint);
     } else {
         console.log(i);
